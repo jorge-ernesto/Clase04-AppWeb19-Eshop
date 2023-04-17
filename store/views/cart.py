@@ -1,9 +1,10 @@
 from django.shortcuts import render
-
-from django.contrib.auth.hashers import  check_password
+from django.contrib.auth.hashers import check_password
 from store.models.customer import Customer
-from django.views import  View
+from django.views import View
 from store.models.product import Products
+
+# Create your views here.
 
 class Cart(View):
     def get(self , request):
@@ -11,4 +12,3 @@ class Cart(View):
         products = Products.get_products_by_id(ids)
         print(products)
         return render(request , 'cart.html' , {'products' : products} )
-

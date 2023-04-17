@@ -1,10 +1,10 @@
-from django.shortcuts import render , redirect , HttpResponseRedirect
+from django.shortcuts import render, redirect, HttpResponseRedirect
 from store.models.product import Products
 from store.models.category import Category
 from django.views import View
 
-
 # Create your views here.
+
 class Index(View):
 
     def post(self , request):
@@ -56,5 +56,3 @@ def store(request):
 
     print('you are : ', request.session.get('email'))
     return render(request, 'index.html', data)
-
-

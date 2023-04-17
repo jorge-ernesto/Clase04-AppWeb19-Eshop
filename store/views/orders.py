@@ -6,9 +6,9 @@ from store.models.product import Products
 from store.models.orders import Order
 from store.middlewares.auth import auth_middleware
 
+# Create your views here.
+
 class OrderView(View):
-
-
     def get(self , request ):
         customer = request.session.get('customer')
         orders = Order.get_orders_by_customer(customer)
